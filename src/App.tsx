@@ -181,29 +181,63 @@ const App: React.FC = () => {
       <section id="stream" style={{ padding: '10rem 0', backgroundColor: 'var(--color-bg-darker)' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '3.5rem' }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>The Arena</h2>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>The Command Center</h2>
             <div style={{ display: 'flex', gap: '1rem', color: 'var(--color-text-dim)', fontSize: '0.9rem', fontWeight: 600 }}>
-              <span style={{ color: 'var(--color-purple)' }}>● LIVE CHAT</span>
-              <span>● MULTI-CAM</span>
-              <span>● 4K60</span>
+              <span style={{ color: 'var(--color-purple)' }}>● LIVE HUB</span>
+              <span>● MULTI-STREAM</span>
             </div>
           </div>
-          <div style={{ 
-            aspectRatio: '16/9', 
-            width: '100%', 
-            backgroundColor: '#000',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            boxShadow: '0 30px 60px rgba(0,0,0,0.7)',
-            border: '1px solid rgba(145, 71, 254, 0.2)',
-            position: 'relative'
-          }}>
-            <iframe
-              src={`https://player.twitch.tv/?channel=wolfeepackk&parent=0xmattyiceee.github.io&parent=localhost`}
-              height="100%"
-              width="100%"
-              allowFullScreen>
-            </iframe>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '2.5rem' }}>
+            {/* WolfeePackk Stream */}
+            <div style={{ width: '100%' }}>
+              <div style={{ 
+                aspectRatio: '16/9', 
+                width: '100%', 
+                backgroundColor: '#000',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                border: '1px solid rgba(145, 71, 254, 0.2)',
+                position: 'relative'
+              }}>
+                <iframe
+                  src={`https://player.twitch.tv/?channel=wolfeepackk&parent=0xmattyiceee.github.io&parent=localhost`}
+                  height="100%"
+                  width="100%"
+                  allowFullScreen>
+                </iframe>
+              </div>
+              <div style={{ marginTop: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#ff4b4b' }}></div>
+                <span style={{ fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.05em' }}>WOLFEEPACKK LIVE</span>
+              </div>
+            </div>
+
+            {/* Tempr Esports Stream */}
+            <div style={{ width: '100%' }}>
+              <div style={{ 
+                aspectRatio: '16/9', 
+                width: '100%', 
+                backgroundColor: '#000',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                border: '1px solid rgba(145, 71, 254, 0.2)',
+                position: 'relative'
+              }}>
+                <iframe
+                  src={`https://player.twitch.tv/?channel=tempresports&parent=0xmattyiceee.github.io&parent=localhost`}
+                  height="100%"
+                  width="100%"
+                  allowFullScreen>
+                </iframe>
+              </div>
+              <div style={{ marginTop: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#ff4b4b' }}></div>
+                <span style={{ fontWeight: 800, fontSize: '0.9rem', letterSpacing: '0.05em' }}>TEMPR ESPORTS OFFICIAL</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
