@@ -49,7 +49,7 @@ const App: React.FC = () => {
               border: '1px solid rgba(255,255,255,0.1)'
             }}>
               <img 
-                src="/wolfeepackk_temprgg/tempr-logo.jpg" 
+                src={`${import.meta.env.BASE_URL}tempr-logo.jpg`}
                 alt="Tempr Logo" 
                 style={{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '4px' }} 
                 onError={(e) => {
@@ -117,7 +117,7 @@ const App: React.FC = () => {
                   overflow: 'hidden'
                 }}>
                   <img 
-                    src="/wolfeepackk_temprgg/tempr-logo.jpg" 
+                    src={`${import.meta.env.BASE_URL}tempr-logo.jpg`}
                     alt="Tempr Logo" 
                     style={{ height: '100%', width: '100%', objectFit: 'cover' }} 
                   />
@@ -199,7 +199,7 @@ const App: React.FC = () => {
             position: 'relative'
           }}>
             <iframe
-              src="https://player.twitch.tv/?channel=wolfeepackk&parent=0xmattyiceee.github.io"
+              src={`https://player.twitch.tv/?channel=wolfeepackk&parent=0xmattyiceee.github.io&parent=localhost`}
               height="100%"
               width="100%"
               allowFullScreen>
@@ -377,28 +377,28 @@ const App: React.FC = () => {
                 price: '$55.00', 
                 tag: 'SIGNATURE',
                 desc: 'Official 2025 competitive jersey',
-                img: '/wolfeepackk_temprgg/merch-jersey.png'
+                img: `${import.meta.env.BASE_URL}merch-jersey.png`
               },
               { 
                 name: 'Lunar Year Jersey', 
                 price: '$55.00', 
                 tag: '2025 SPECIAL',
                 desc: 'Limited edition themed jersey',
-                img: '/wolfeepackk_temprgg/merch-lunar.png'
+                img: `${import.meta.env.BASE_URL}merch-lunar.png`
               },
               { 
                 name: 'Legacy Hoodie', 
                 price: '$70.00', 
                 tag: 'CLASSIC',
                 desc: 'Premium heavyweight performance hoodie',
-                img: '/wolfeepackk_temprgg/merch-hoodie.png'
+                img: `${import.meta.env.BASE_URL}merch-hoodie.png`
               },
               { 
                 name: 'Legacy Jacket', 
                 price: '$70.00', 
                 tag: 'NEW ARRIVAL',
                 desc: 'Sleek zip-up team performance jacket',
-                img: '/wolfeepackk_temprgg/merch-jacket.png'
+                img: `${import.meta.env.BASE_URL}merch-jacket.png`
               }
             ].map((item) => (
               <div key={item.name} className="card" style={{ padding: '0.5rem', position: 'relative' }}>
