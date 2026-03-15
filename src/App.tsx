@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { 
   Twitch, 
   Youtube, 
-  Trophy, 
   Users, 
   ExternalLink, 
   Play, 
-  Calendar, 
-  ShoppingBag, 
   Mail, 
   ChevronRight,
   Clock,
