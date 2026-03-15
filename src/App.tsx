@@ -199,7 +199,7 @@ const App: React.FC = () => {
             position: 'relative'
           }}>
             <iframe
-              src="https://player.twitch.tv/?channel=wolfeepackk&parent=localhost"
+              src="https://player.twitch.tv/?channel=wolfeepackk&parent=0xmattyiceee.github.io"
               height="100%"
               width="100%"
               allowFullScreen>
