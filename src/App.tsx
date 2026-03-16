@@ -3,7 +3,6 @@ import {
   Twitch, 
   Youtube, 
   Users, 
-  ExternalLink, 
   Play, 
   Mail, 
   ChevronRight,
