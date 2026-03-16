@@ -15,6 +15,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg-dark);
   color: var(--color-white);
@@ -22,6 +26,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
@@ -40,13 +45,13 @@ button {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 800;
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2rem, 8vw, 3rem);
   text-transform: uppercase;
   letter-spacing: -0.02em;
   display: flex;
@@ -57,7 +62,7 @@ button {
 .section-title::before {
   content: '';
   width: 4px;
-  height: 2.5rem;
+  height: clamp(1.8rem, 5vw, 2.5rem);
   background-color: var(--color-purple);
   box-shadow: 0 0 10px var(--color-purple);
 }
@@ -72,6 +77,8 @@ button {
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 4px 14px 0 rgba(145, 71, 254, 0.39);
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -88,7 +95,39 @@ button {
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-purple);
+.social-icon {
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  color: var(--color-purple);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+  
+  .mobile-toggle {
+    display: block !important;
+  }
+  
+  .section-padding {
+    padding: 5rem 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-buttons > * {
+    width: 100%;
+    justify-content: center;
+  }
 }
