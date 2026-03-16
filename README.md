@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# WolfeePackk Official Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official personal brand and e-sports community website for **WolfeePackk**, a professional member of the **Tempr Esports** team. This platform serves as a central hub for his live streams, competitive content, and official team gear.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **The Command Center:** Integrated dual-stream player featuring both WolfeePackk and the official Tempr Esports Twitch channels.
+- **Latest Intel:** Interactive YouTube playlists showcasing featured content like the *Resident Evil* series and the *BO7 Bronze to Iridescent* competitive grind.
+- **Team Gear:** Official Tempr Esports apparel shop powered by Raven.GG with high-quality product displays.
+- **Weekly Schedule:** A clear roadmap of upcoming streams and competitive qualifiers.
+- **Professional Branding:** Modern "Twitch Dark" aesthetic with official Tempr team logos and neon purple accents.
+- **Mobile First:** Fully responsive design optimized for a seamless experience on smartphones, tablets, and desktops.
 
-## React Compiler
+## 🛠️ Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** (TypeScript)
+- **Vite** (Build Tool)
+- **Lucide React** (Modern Iconography)
+- **GitHub Pages** (Hosting & Deployment)
+- **Vanilla CSS** (Custom Neon & Responsive Styling)
 
-## Expanding the ESLint configuration
+## 🌐 Live Site
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Experience the live platform here:  
+[https://0xmattyiceee.github.io/wolfeepackk_temprgg/](https://0xmattyiceee.github.io/wolfeepackk_temprgg/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+*Designed for the Pack. Built for Champions.*
