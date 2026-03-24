@@ -33,9 +33,28 @@ const App: React.FC = () => {
 
   const navLinks = [
     { name: 'LIVE', href: '#stream' },
-    { name: 'CONTENT', href: '#content' },
+    { name: 'ROSTER', href: '#roster' },
+    { name: 'MATCHES', href: '#matches' },
     { name: 'SCHEDULE', href: '#schedule' },
+    { name: 'CONTENT', href: '#content' },
     { name: 'MERCH', href: '#merch' },
+  ];
+
+  const roster = [
+    { name: 'Wolfe', role: 'CAPTAIN', discord: 'Wolfe#8810361', img: 'tempr-logo.jpg' },
+    { name: 'Krossify', role: 'PLAYER', discord: 'Krossify#2815547', img: 'tempr-logo.jpg' },
+    { name: 'Weapin', role: 'PLAYER', discord: 'Weapin#8077583', img: 'tempr-logo.jpg' },
+    { name: 'JoshoTheClown', role: 'PLAYER', discord: 'JoshoTheClown#8605570', img: 'tempr-logo.jpg' },
+  ];
+
+  const leagueMatches = [
+    { opponent: 'PARIS LETDOWN', date: 'MAR 25', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
+    { opponent: 'CHICAGO HUNTED', date: 'APR 01', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
+    { opponent: 'LAG', date: 'APR 08', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
+    { opponent: 'MINNESOTA FLOPPR', date: 'APR 15', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
+    { opponent: 'MANITOBA MALLARDS', date: 'APR 22', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
+    { opponent: 'TORONTO FALTERS', date: 'APR 29', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
+    { opponent: 'FLORIDA PUPPETEERS', date: 'MAY 06', time: '10:30 PM EST', event: 'GOLD PREMADE NORTH' },
   ];
 
   return (
@@ -285,8 +304,50 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Team Roster Section */}
+      <section id="roster" className="section-padding" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, var(--color-bg-darker) 0%, var(--color-bg-dark) 100%)' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3.5rem' }}>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>The Pack</h2>
+            <div style={{ display: 'flex', gap: '1rem', color: 'var(--color-text-dim)', fontSize: '0.8rem', fontWeight: 600 }}>
+              <span style={{ color: 'var(--color-purple)' }}>● ACTIVE ROSTER</span>
+              <span>● ELITE TIER</span>
+            </div>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+            {roster.map((player) => (
+              <div key={player.name} className="card" style={{ padding: '1.5rem', textAlign: 'center', transition: 'all 0.3s ease', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ 
+                  width: '120px', 
+                  height: '120px', 
+                  borderRadius: '50%', 
+                  backgroundColor: 'rgba(145, 71, 254, 0.1)', 
+                  margin: '0 auto 1.5rem',
+                  padding: '8px',
+                  border: '2px solid var(--color-purple)',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  <img 
+                    src={`${import.meta.env.BASE_URL}${player.img}`} 
+                    alt={player.name} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} 
+                  />
+                </div>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, marginBottom: '0.4rem', letterSpacing: '-0.02em' }}>{player.name}</h3>
+                <div style={{ color: 'var(--color-purple)', fontWeight: 800, fontSize: '0.7rem', marginBottom: '1.2rem', letterSpacing: '0.1em' }}>{player.role}</div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-text-dim)' }}>
+                  <Users size={14} color="var(--color-purple)" /> {player.discord}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Schedule Section */}
-      <section id="schedule" className="section-padding" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, var(--color-bg-darker) 0%, var(--color-bg-dark) 100%)' }}>
+      <section id="schedule" className="section-padding" style={{ padding: '8rem 0', background: 'linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-darker) 100%)' }}>
         <div className="container">
           <h2 className="section-title">Weekly Schedule</h2>
           <div style={{ 
@@ -309,6 +370,40 @@ const App: React.FC = () => {
                   <Clock size={10} /> {item.time}
                 </div>
                 <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'var(--color-text-dim)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{item.event}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* League Matches Section */}
+      <section id="matches" className="section-padding" style={{ padding: '8rem 0', backgroundColor: 'var(--color-bg-darker)' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3.5rem' }}>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>League Matches</h2>
+            <div style={{ display: 'flex', gap: '1rem', color: 'var(--color-text-dim)', fontSize: '0.8rem', fontWeight: 600 }}>
+              <span style={{ color: 'var(--color-purple)' }}>● LIVE COMPETITION</span>
+              <span>● SEASON 4</span>
+            </div>
+          </div>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {leagueMatches.map((match, idx) => (
+              <div key={idx} className="card match-card">
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 900 }}>{match.date}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.6rem', color: 'var(--color-purple)', fontWeight: 800, marginBottom: '0.2rem' }}>OPPONENT</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 900 }}>{match.opponent}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.6rem', color: 'var(--color-purple)', fontWeight: 800, marginBottom: '0.2rem' }}>EVENT</div>
+                  <div style={{ fontSize: '1.1rem', fontWeight: 900 }}>{match.event}</div>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <div style={{ color: 'var(--color-text-dim)', fontSize: '0.8rem', fontWeight: 700 }}>{match.time}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -452,7 +547,7 @@ const App: React.FC = () => {
             <a href="https://twitch.tv/wolfeepackk" target="_blank" rel="noreferrer" className="social-icon"><Twitch size={20} /></a>
             <a href="https://youtube.com/@wolfeepackk" target="_blank" rel="noreferrer" className="social-icon"><Youtube size={20} /></a>
             <a href="https://x.com/wolfe2123" target="_blank" rel="noreferrer" className="social-icon"><Twitter size={20} /></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-icon"><Instagram size={20} /></a>
+            <a href="https://instagram.com/wolfe2110" target="_blank" rel="noreferrer" className="social-icon"><Instagram size={20} /></a>
           </div>
           <p style={{ color: '#444', fontSize: '0.7rem', fontWeight: 600, padding: '0 1rem' }}>
             © 2026 WOLFEEPACKK E-SPORTS. DESIGNED FOR CHAMPIONS. ALL RIGHTS RESERVED.
